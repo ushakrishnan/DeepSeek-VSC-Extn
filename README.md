@@ -1,71 +1,146 @@
-# codehelper README
+# About this code
 
-This is the README for your extension "codehelper". After writing up a brief description, we recommend including the following sections.
+This repository contains the source code for the Visual Studio Code extension "codehelper". This extension serves as a starting point and proof of concept for how one can recreate a GitHub Copilot-like extension using the open-source model deepseek-coder:1.5b.
 
-## Features
+## Purpose
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+The primary goal of this extension is to demonstrate the capabilities of the deepseek-coder:1.5b model in providing intelligent code suggestions and assistance within the Visual Studio Code environment. It aims to replicate some of the functionalities of GitHub Copilot using an open-source approach.
 
-For example if there is an image subfolder under your extension project workspace:
+## What a user can do and test using this repo
 
-\!\[feature X\]\(images/feature-x.png\)
+1. **Install and Set Up**: Follow the installation steps to set up the development environment.
+2. **Run and Debug**: Use Visual Studio Code to run and debug the extension in a new VS Code window.
+3. **Test Functionality**: Test the various features provided by the extension.
+4. **Contribute**: Make improvements or add new features to the extension and contribute back to the repository.
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+# Installation steps
+    Step 1: Install Docker
+    Step 2: Install Ollama
+    Step 3: Pull deepseek-coder:1.3b
+    Step 4: Clone this repo and set up
+    Step 5: Make sure your Ollama is running and deepseek-coder is operational. Run your VSC in debug mode to test
+    Step 6: Package and deploy as needed
 
-## Requirements
+# Detailed installation: Installing Docker and Ollama on Windows, Linux, and Mac
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Windows Installation
 
-## Extension Settings
+1. Download Docker Desktop for Windows from the official site:
+   - [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/)
+2. Run the installer and follow the setup instructions.
+3. After installation, start Docker Desktop.
+4. Verify installation by running:
+   ```sh
+   docker --version
+   ```
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## Linux Installation
 
-For example:
+1. Update package lists:
+   ```sh
+   sudo apt update
+   ```
+2. Install required packages:
+   ```sh
+   sudo apt install -y ca-certificates curl gnupg
+   ```
+3. Add Docker’s official GPG key:
+   ```sh
+   sudo install -m 0755 -d /etc/apt/keyrings
+   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo tee /etc/apt/keyrings/docker.asc > /dev/null
+   sudo chmod a+r /etc/apt/keyrings/docker.asc
+   ```
+4. Set up the repository:
+   ```sh
+   echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   ```
+5. Install Docker Engine:
+   ```sh
+   sudo apt update
+   sudo apt install -y docker-ce docker-ce-cli containerd.io
+   ```
+6. Verify installation:
+   ```sh
+   docker --version
+   ```
+7. [Docker Installation for Linux - Official Docs](https://docs.docker.com/engine/install/ubuntu/)
 
-This extension contributes the following settings:
+## Mac Installation
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+1. Download Docker Desktop for Mac:
+   - [Docker Desktop for Mac](https://docs.docker.com/desktop/install/mac-install/)
+2. Open the downloaded `.dmg` file and follow the installation instructions.
+3. Start Docker Desktop.
+4. Verify installation by running:
+   ```sh
+   docker --version
+   ```
 
-## Known Issues
+## Installing Ollama on Docker
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+1. Pull the Ollama Docker image:
+   ```sh
+   docker pull ollama/ollama
+   ```
+2. Run the Ollama container:
+   ```sh
+   docker run -d --name ollama -p 11434:11434 ollama/ollama
+   ```
+3. Verify Ollama is running:
+   ```sh
+   curl http://localhost:11434
+   ```
 
-## Release Notes
+## Pulling and Testing deepseek-code:1.5b
 
-Users appreciate release notes as you update your extension.
+1. Pull the deepseek-code:1.5b model:
+   ```sh
+   ollama pull deepseek-code:1.5b
+   ```
+2. Run a test command to check if the model is working:
+   ```sh
+   ollama run deepseek-code:1.5b "def hello_world(): print('Hello, world!')"
+   ```
 
-### 1.0.0
+## Cloning and Setting Up This Repository
 
-Initial release of ...
+1. Clone this repository:
+   ```sh
+   git clone https://github.com/yourusername/codehelper.git
+   cd codehelper
+   ```
+2. Install the necessary dependencies:
+   ```sh
+   npm install
+   ```
+3. Open the project in Visual Studio Code:
+   ```sh
+   code .
+   ```
+4. Make sure your Ollama is running and deepseek-coder is operational.
+5. Run Visual Studio Code in debug mode to test the extension:
+   - Press `F5` to start debugging.
 
-### 1.0.1
+## Testing the Extension
 
-Fixed issue #.
+1. Open the project in Visual Studio Code:
+   ```sh
+   code .
+   ```
+2. Press `F5` to start debugging. This will open a new VS Code window with the extension loaded.
+3. In the new window, open the command palette (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac) and run the command `codehelper.codehelper-ext` to open the CodeHelper Chat panel.
+4. In the CodeHelper Chat panel, enter a prompt in the text area and click the "Send" button.
+5. The extension will use the deepseek-coder:1.3b model to generate a response, which will be displayed in the panel. Screenshots below on the current experience.
 
-### 1.1.0
+      Invoking the extension using the command prompt -
+      ![CodeHelper Chat Panel](./assets/images/codehelper_command.png)
 
-Added features X, Y, and Z.
+      Extension chat page for your testing -
+      ![CodeHelper Chat Panel](./assets/images/codehelper_screen.png)
 
----
+6. Check the output and debug console for any errors or logs to ensure the extension is working as expected.
+7. Extend and contribute back your changes and enhancements.
 
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+## Additional Resources
+- [Docker Official Installation Guide](https://docs.docker.com/get-docker/)
+- [Ollama Documentation](https://ollama.ai/docs)
