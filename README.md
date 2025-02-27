@@ -15,8 +15,6 @@ The primary goal of this extension is to demonstrate the capabilities of the dee
 3. **Test Functionality**: Test the various features provided by the extension.
 4. **Contribute**: Make improvements or add new features to the extension and contribute back to the repository.
 
-Inspired by https://www.youtube.com/watch?v=clJCDHml2cA
-
 [Back to top](#about-this-code)
 
 # Installation steps
