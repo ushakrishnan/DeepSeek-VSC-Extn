@@ -1,5 +1,33 @@
-out
-dist
-node_modules
+# Ignore node_modules directory
+node_modules/
+
+# Ignore build output directories
+out/
+dist/
+
+# Ignore VS Code test files
 .vscode-test/
+
+# Ignore VS Code extension package files
 *.vsix
+
+# Ignore environment variable files
+.env
+
+# Ignore log files
+*.log
+
+# Ignore coverage reports
+coverage/
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
