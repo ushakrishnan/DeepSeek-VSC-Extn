@@ -6,12 +6,16 @@ This repository contains the source code for the Visual Studio Code extension "c
 
 The primary goal of this extension is to demonstrate the capabilities of the deepseek-coder:1.5b model in providing intelligent code suggestions and assistance within the Visual Studio Code environment. It aims to replicate some of the functionalities of GitHub Copilot using an open-source approach.
 
+[Back to top](#about-this-code)
+
 ## What a user can do and test using this repo
 
 1. **Install and Set Up**: Follow the installation steps to set up the development environment.
 2. **Run and Debug**: Use Visual Studio Code to run and debug the extension in a new VS Code window.
 3. **Test Functionality**: Test the various features provided by the extension.
 4. **Contribute**: Make improvements or add new features to the extension and contribute back to the repository.
+
+[Back to top](#about-this-code)
 
 # Installation steps
     Step 1: Install Docker
@@ -20,6 +24,8 @@ The primary goal of this extension is to demonstrate the capabilities of the dee
     Step 4: Clone this repo and set up
     Step 5: Make sure your Ollama is running and deepseek-coder is operational. Run your VSC in debug mode to test
     Step 6: Package and deploy as needed
+
+[Back to top](#about-this-code)
 
 # Detailed installation: Installing Docker and Ollama on Windows, Linux, and Mac
 
@@ -33,6 +39,8 @@ The primary goal of this extension is to demonstrate the capabilities of the dee
    ```sh
    docker --version
    ```
+
+[Back to top](#about-this-code)
 
 ## Linux Installation
 
@@ -63,7 +71,10 @@ The primary goal of this extension is to demonstrate the capabilities of the dee
    ```sh
    docker --version
    ```
+
 7. [Docker Installation for Linux - Official Docs](https://docs.docker.com/engine/install/ubuntu/)
+
+[Back to top](#about-this-code)
 
 ## Mac Installation
 
@@ -75,6 +86,8 @@ The primary goal of this extension is to demonstrate the capabilities of the dee
    ```sh
    docker --version
    ```
+
+[Back to top](#about-this-code)
 
 ## Installing Ollama on Docker
 
@@ -91,6 +104,8 @@ The primary goal of this extension is to demonstrate the capabilities of the dee
    curl http://localhost:11434
    ```
 
+[Back to top](#about-this-code)
+
 ## Pulling and Testing deepseek-code:1.5b
 
 1. Pull the deepseek-code:1.5b model:
@@ -101,6 +116,8 @@ The primary goal of this extension is to demonstrate the capabilities of the dee
    ```sh
    ollama run deepseek-code:1.5b "def hello_world(): print('Hello, world!')"
    ```
+
+[Back to top](#about-this-code)
 
 ## Cloning and Setting Up This Repository
 
@@ -120,6 +137,8 @@ The primary goal of this extension is to demonstrate the capabilities of the dee
 4. Make sure your Ollama is running and deepseek-coder is operational.
 5. Run Visual Studio Code in debug mode to test the extension:
    - Press `F5` to start debugging.
+
+[Back to top](#about-this-code)
 
 ## Testing the Extension
 
@@ -141,6 +160,11 @@ The primary goal of this extension is to demonstrate the capabilities of the dee
 6. Check the output and debug console for any errors or logs to ensure the extension is working as expected.
 7. Extend and contribute back your changes and enhancements.
 
+[Back to top](#about-this-code)
+
 ## Additional Resources
 - [Docker Official Installation Guide](https://docs.docker.com/get-docker/)
 - [Ollama Documentation](https://ollama.ai/docs)
+
+[Back to top](#about-this-code)
+
