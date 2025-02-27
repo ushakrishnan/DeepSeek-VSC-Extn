@@ -167,4 +167,3 @@ The primary goal of this extension is to demonstrate the capabilities of the dee
 - [Ollama Documentation](https://ollama.ai/docs)
 
 [Back to top](#about-this-code)
-
